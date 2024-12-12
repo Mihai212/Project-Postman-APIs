@@ -301,4 +301,4 @@
 | `clientName`  | string | body | Yes      | The name of the API client.            |
 | `clientEmail` | string | body | Yes      | The email address of the API client. * |
    
-<img align="center" alt="Status" width="1300" src="hhttps://i.ibb.co/T2QPtB4/9-Register-A-New-API.png">
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/T2QPtB4/9-Register-A-New-API.png">
