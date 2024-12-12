@@ -327,7 +327,7 @@
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/hRNhKbv/10-Create-A-New-Order.png">
 
 
-## Orders
+
 ### B. Get a single order
 
 2. Click on "Get a single order" request;
@@ -353,7 +353,6 @@
 
 
 
-## Orders
 ### C. Get all orders
 
 2. Click on "Get all orders" request;
@@ -372,3 +371,27 @@
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/zW3TV5H/13-Get-All-Orders.png">
 
+
+
+### C. Update an order
+
+2. Click on "Update an order" request;
+3. Select "PATCH" method;
+4. Type in the empty field "{{baseURL}}/orders/:orderId";
+5. Complete in "Headers", "Path Variables" and "Body" with relevant data like in the photo bellow.
+
+| Name            | Type   | In     | Required | Description                          |
+| --------------- | ------ | ------ | -------- | ------------------------------------ |
+| `Authorization` | string | header | Yes      | The bearer token of the API client.  |
+| `orderId`       | string | path   | Yes      | The order id.                        |
+| `customerName`  | string | body   | No       | The name of the customer.            |
+| `comment`       | string | body   | No       | A comment associated with the order. |
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/WKhRxbB/14-Update-An-Order-1.png">
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/ZzsLwSJ/14-Update-An-Order-2.png">
+
+6. Click on "Send";
+7. Positive result: 200 OK
+8. Should be displayed in "Headers" a result like this example bellow.
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/b73XQTw/14-Update-An-Order-3.png">
