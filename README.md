@@ -395,3 +395,24 @@
 8. Should be displayed in "Headers" a result like this example bellow.
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/b73XQTw/14-Update-An-Order-3.png">
+
+
+### C. Delete an order
+
+2. Click on "Delete an order" request;
+3. Select "DELETE" method;
+4. Type in the empty field "{{baseURL}}/orders/:orderId";
+5. Complete in "Headers" and "Path Variables" with relevant data like in the photo bellow.
+
+| Name            | Type   | In     | Required | Description                         |
+| --------------- | ------ | ------ | -------- | ----------------------------------- |
+| `Authorization` | string | header | Yes      | The bearer token of the API client. |
+| `orderId`       | string | path   | Yes      | The order id.                       |
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/RhVm4Qc/15-Delete-An-Order-1.png">
+
+6. Click on "Send";
+7. Positive result: 200 OK
+8. Should be displayed in "Headers" a result like this example bellow.
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/kXFBWKH/15-Delete-An-Order-2.png">
