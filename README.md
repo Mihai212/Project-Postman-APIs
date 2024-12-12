@@ -52,7 +52,7 @@
 
 ### B. Get all products
 
-1. Complete in "Query Params" with relevant info like in the photo below:
+1. Complete in "Query Params" with relevant info like in the photo bellow:
    
 | Name        | Type    | In    | Required | Description                                                                                                                                          |
 | ----------- | ------- | ----- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -209,6 +209,6 @@
 4. Complete in "Body" with relevant info like in the photo bellow:
 4. Click on "Send";
 5. Positive result: 204 No Content
-6. Should be displayed in "Body" a result like this example below:
+6. Should be displayed in "Body" a result like this example bellow:
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/Xkzdfhd/Replace-an-item-in-the-cart-2.png">
