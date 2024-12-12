@@ -3,6 +3,8 @@
 
 <h3 align="center"> "This API allows you to place a grocery order which will be ready for pick-up in the store." </h1>
 
+
+
 ## Endpoints
 - [Status](#Status)
 - [Products](#Products)
@@ -24,8 +26,11 @@
   - [Delete an order](#Delete-an-order)
 - [API Authentication](#API-Authentication)
   - [Register a new API client](#Register-a-new-API-client)
-#
 
+
+
+
+#
 ## Status
 
 1. Click on "Status" folder;
@@ -36,6 +41,11 @@
 6. Positive result: 200 OK.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/K6n12K0/1-Status.png">
+
+
+
+
+
 
 ## Products
 ### A. Get all products
@@ -49,6 +59,10 @@
 8. Should be displayed the id, category, name and valability of all the products from the grocery store.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/TM0fs0D/2-Get-all-products-1.png">
+
+
+
+
 
 ### B. Get all products
 
@@ -67,6 +81,9 @@
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/VJ5Xtq0/3-Get-all-products-2.png">
 
 
+
+
+
 ## C. Get a product
 
 1. Click on "Get a product" request;
@@ -83,6 +100,10 @@
 6. Should be displayed the product with its data: Id, Category, Name, Manufacturer, Price, Current-Stock, InStock.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/DbJTLyj/4-Get-a-product.png">
+
+
+
+
 
 ## Cart
 ### A. Create a new Cart
@@ -104,6 +125,11 @@
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/wZqKDb8/5-Create-A-New-Cart.png">
 
+
+
+
+
+
 ### B. Get a cart
 
 1. Click on "Get a cart" request;
@@ -121,6 +147,11 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/NVRCSS0/6-Get-A-Cart.png">
 
+
+
+
+
+
 ### C. Get cart items
 
 1. Click on "Get cart items" request;
@@ -137,6 +168,9 @@
 6. Should be displayed in "Body" a result like this example bellow:
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/yq1XJkw/6-Get-Cart-Items.png">
+
+
+
 
 ### D. Add an item to cart
 
@@ -168,12 +202,17 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/gwQmjGb/7-Add-an-Item-To-Cart-2.png">
 
+
+
+
+
+
 ### E. Modify an item
 
 1. Click on "Modify an item" request;
 2. Select "PATCH" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId/items/:itemId";
-4. Complete in "Path Variables" with relevant info like in the photo below:
+4. Complete in "Path Variables" with relevant info like in the photo bellow:
 
 | Name       | Type    | In   | Required | Description            |
 | ---------- | ------- | ---- | -------- | ---------------------- |
@@ -190,12 +229,16 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/Chydj4Z/8-Modify-An-Item-In-The-Cart-2.png">
 
+
+
+
+
 ### F. Replace an item in the cart
 
 1. Click on "Replace an item in the cart" request;
 2. Select "PUT" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId/items/:itemId";
-4. Complete in "Path Variables" and "Body" with relevant info like in the photo below:
+4. Complete in "Path Variables" and "Body" with relevant info like in the photo bellow:
 
 | Name        | Type    | In   | Required | Description               |
 | ----------- | ------- | ---- | -------- | ------------------------- |
@@ -206,9 +249,55 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/r3XzxYC/Replace-an-item-in-the-cart.png">
 
-4. Complete in "Body" with relevant info like in the photo bellow:
-4. Click on "Send";
-5. Positive result: 204 No Content
-6. Should be displayed in "Body" a result like this example bellow:
+4. Complete in "Body" (JSON format) with relevant info like in the photo bellow:
+5. Click on "Send";
+6. Positive result: 204 No Content
+7. Should be displayed in "Body" a result like this example bellow:
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/Xkzdfhd/Replace-an-item-in-the-cart-2.png">
+
+
+
+
+
+### G. Delete an item in the cart
+
+1. Click on "Delete an item in the cart" request;
+2. Select "DELETE" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId/items/:itemId";
+4. Complete in "Path Variables" with relevant info like in the photo bellow.
+5. Positive result: 204 No Content
+6. Should be displayed in "Body" a result like this example bellow;
+7. 5. Click on "Send";
+6. Positive result: 204 No Content
+
+| Name        | Type   | In   | Required | Description             |
+| ----------- | ------ | ---- | -------- | ----------------------- |
+| `cartId`    | string | path | Yes      | Specifies the cart id.  |
+| `itemId`    | string | path | Yes      | Specifies the item id.  |
+
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/gdpD0pz/Delete-an-item-in-the-cart.png">
+
+
+
+
+## API Authentification
+### Register a new API
+
+1. Click on "API Authentification" folder;
+2. Click on "Register a new APIt" request;
+3. Select "POST" method;
+4. Type in the empty field "{{baseURL}}/api-clients";
+5. Go to "Body"-> raw-> JSON
+6. Type in "Body" relevant data like in the photo bellow.
+7. Click on "Send";
+8. Positive result: 201 Created
+9. Should be displayed in "Body" a result like this example bellow:
+
+| Name          | Type   | In   | Required | Description                            |
+| ------------- | ------ | ---- | -------- | -------------------------------------- |
+| `clientName`  | string | body | Yes      | The name of the API client.            |
+| `clientEmail` | string | body | Yes      | The email address of the API client. * |
+   
+<img align="center" alt="Status" width="1300" src="hhttps://i.ibb.co/T2QPtB4/9-Register-A-New-API.png">
