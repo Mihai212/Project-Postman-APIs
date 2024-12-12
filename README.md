@@ -72,7 +72,7 @@
 1. Click on "Get a product" folder;
 2. Click on "Get a product" request;
 3. Select "GET" method;
-4. Type in the empty field "{{baseURL}}/products"
+4. Type in the empty field "{{baseURL}}/products/:productId"
 5. Complete in "Query Params" and "Path Variables" with relevant info like in the photo below:
 
 | Name            | Type    | In    | Required |
