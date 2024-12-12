@@ -93,7 +93,7 @@
 4. Type in the empty field "{{baseURL}}/carts";
 5. Click on "Send";
 6. Positive result: 201 Created
-7. Should be displayed in "Body" a result like this example below:
+7. Should be displayed in "Body" a result like this example bellow:
 
 ```
 {
@@ -109,7 +109,7 @@
 1. Click on "Get a cart" request;
 2. Select "GET" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId";
-4. Complete in "Path Variables" with relevant info like in the photo below:
+4. Complete in "Path Variables" with relevant info like in the photo bellow:
 
 | Name     | Type   | In   | Required | Description                                        |
 | -------- | ------ | ---- | -------- | -------------------------------------------------- |
@@ -117,7 +117,7 @@
 
 4. Click on "Send";
 5. Positive result: 200 OK
-6. Should be displayed in "Body" a result like this example below:
+6. Should be displayed in "Body" a result like this example bellow:
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/NVRCSS0/6-Get-A-Cart.png">
 
@@ -126,7 +126,7 @@
 1. Click on "Get cart items" request;
 2. Select "Get" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId/items";
-4. Complete in "Path Variables" with relevant info like in the photo below:
+4. Complete in "Path Variables" with relevant info like in the photo bellow:
 
  Name     | Type   | In   | Required | Description                                                            |
 | -------- | ------ | ---- | -------- | ---------------------------------------------------------------------- |
@@ -134,7 +134,7 @@
 
 4. Click on "Send";
 5. Positive result: 200 OK
-6. Should be displayed in "Body" a result like this example below:
+6. Should be displayed in "Body" a result like this example bellow:
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/yq1XJkw/6-Get-Cart-Items.png">
 
@@ -143,7 +143,7 @@
 1. Click on "Add an item to cart" request;
 2. Select "POST" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId/items";
-4. Complete in "Path Variables" with relevant info like in the photo below:
+4. Complete in "Path Variables" with relevant info like in the photo bellow:
 
 | Name        | Type    | In   | Required | Description                                         |
 | ----------- | ------- | ---- | -------- | --------------------------------------------------- |
@@ -164,11 +164,11 @@
 ```
 7. Click on "Send";
 8. Positive result: 201 Created;
-9. Should be displayed the item created and the itemId like in the photo below.
+9. Should be displayed the item created and the itemId like in the photo bellow.
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/gwQmjGb/7-Add-an-Item-To-Cart-2.png">
 
-### Modify an item
+### E. Modify an item
 
 1. Click on "Modify an item" request;
 2. Select "PATCH" method;
@@ -183,9 +183,32 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/qJpJJ7g/8-Modify-An-Item-In-The-Cart-1.png">
 
-4. Complete in "Body" with relevant info like in the photo below:
+4. Complete in "Body" with relevant info like in the photo bellow:
+4. Click on "Send";
+5. Positive result: 204 No Content
+6. Should be displayed in "Body" a result like this example bellow:
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/Chydj4Z/8-Modify-An-Item-In-The-Cart-2.png">
+
+### F. Replace an item in the cart
+
+1. Click on "Replace an item in the cart" request;
+2. Select "PUT" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId/items/:itemId";
+4. Complete in "Path Variables" and "Body" with relevant info like in the photo below:
+
+| Name        | Type    | In   | Required | Description               |
+| ----------- | ------- | ---- | -------- | ------------------------- |
+| `cartId`    | string  | path | Yes      | Specifies the cart id.    |
+| `itemId`    | string  | path | Yes      | Specifies the item id.    |
+| `productId` | integer | body | Yes      | Specifies the product id. |
+| `quantity`  | integer | body | No       | Quantity                  |
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/r3XzxYC/Replace-an-item-in-the-cart.png">
+
+4. Complete in "Body" with relevant info like in the photo bellow:
 4. Click on "Send";
 5. Positive result: 204 No Content
 6. Should be displayed in "Body" a result like this example below:
 
-<img align="center" alt="Status" width="1300" src="https://i.ibb.co/Chydj4Z/8-Modify-An-Item-In-The-Cart-2.png">
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/Xkzdfhd/Replace-an-item-in-the-cart-2.png">
