@@ -288,7 +288,7 @@
 
 1. Click on "API Authentification" folder;
 2. Click on "Register a new APIt" request;
-3. Select "POST" method;
+3. Select "POST" method
 4. Type in the empty field "{{baseURL}}/api-clients";
 5. Go to "Body"-> raw-> JSON
 6. Type in "Body" relevant data like in the photo bellow.
@@ -302,3 +302,73 @@
 | `clientEmail` | string | body | Yes      | The email address of the API client. * |
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/T2QPtB4/9-Register-A-New-API.png">
+
+
+## Orders
+### A. Create a new order
+
+1. Click on "Orders" folder;
+2. Click on "Create a new order" request;
+3. Select "POST" method;
+4. Type in the empty field "{{baseURL}}/orders";
+5. Go to "Body"-> raw-> JSON
+6. Type in "Body" relevant data like in the photo bellow.
+7. Click on "Send";
+8. Positive result: 201 Created
+9. Should be displayed in "Body" a result like this example bellow:
+
+| Name            | Type   | In     | Required | Description                          |
+| --------------- | ------ | ------ | -------- | ------------------------------------ |
+| `Authorization` | string | header | Yes      | The bearer token of the API client.  |
+| `cartId`        | string | body   | Yes      | The cart id                          |
+| `customerName`  | string | body   | Yes      | The name of the customer.            |
+| `comment`       | string | body   | No       | A comment associated with the order. |
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/hRNhKbv/10-Create-A-New-Order.png">
+
+
+## Orders
+### B. Get a single order
+
+2. Click on "Get a single order" request;
+3. Select "GET" method;
+4. Type in the empty field "{{baseURL}}/orders";
+5. Complete the "Path"Body"-> raw-> JSON
+6. Complete in "Path Variables" with relevant data like in the photo bellow.
+
+| Name            | Type    | In     | Required | Description                         |
+| --------------- | ------- | ------ | -------- | ----------------------------------- |
+| `Authorization` | string  | header | Yes      | The bearer token of the API client. |
+| `orderId`       | string  | path   | Yes      | The order id.                       |
+| `invoice`       | boolean | query  | No       | Show the PDF invoice.               |
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/sVGJkLr/11-Get-A-Single-Order.png">
+
+7. Complete in "Headers" with relevant data like in the photo bellow.
+6. Click on "Send";
+7. Positive result: 200 OK
+8. Should be displayed in "Body" a result like this example bellow.
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/BzpsjMZ/12-Get-A-Single-Order.png">
+
+
+
+## Orders
+### C. Get all orders
+
+2. Click on "Get all orders" request;
+3. Select "GET" method;
+4. Type in the empty field "{{baseURL}}/orders";
+5. Complete in "Headers" with relevant data like in the photo bellow.
+6. Click on "Send";
+7. Positive result: 200 OK
+8. Should be displayed in "Headers" a result like this example bellow.
+
+| Name            | Type    | In     | Required | Description                         |
+| --------------- | ------- | ------ | -------- | ----------------------------------- |
+| `Authorization` | string  | header | Yes      | The bearer token of the API client. |
+| `orderId`       | string  | path   | Yes      | The order id.                       |
+| `invoice`       | boolean | query  | No       | Show the PDF invoice.               |
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/zW3TV5H/13-Get-All-Orders.png">
+
