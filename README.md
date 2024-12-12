@@ -54,11 +54,11 @@
 
 1. Complete in "Query Params" with relevant info like in the photo below:
    
-| Name        | Type    | In    | Required |
-| ----------- | ------- | ----- | -------- |
-| `category`  | string  | query | Yes      |
-| `results`   | integer | query | Yes      |
-| `available` | boolean | query | Yes      |
+| Name        | Type    | In    | Required | Description                                                                                                                                          |
+| ----------- | ------- | ----- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `category`  | string  | query | No       | Specifies the category of products you want to be returned. It can be one of: meat-seafood, fresh-produce, candy, bread-bakery, dairy, eggs, coffee. |
+| `results`   | integer | query | No       | Specifies the number of results you want. Must be number between 1 and 20. By default, only 20 products will be displayed.                           |
+| `available` | boolean | query | No       | Specifies the availability of the products. By default, all products will be displayed.                                                              |
 
 2. Click on "Send" to send the request;
 3. Positive result: 200 OK;
@@ -69,24 +69,23 @@
 
 ## C. Get a product
 
-1. Click on "Get a product" folder;
-2. Click on "Get a product" request;
-3. Select "GET" method;
-4. Type in the empty field "{{baseURL}}/products/:productId";
-5. Complete in "Query Params" and "Path Variables" with relevant info like in the photo below:
+1. Click on "Get a product" request;
+2. Select "GET" method;
+3. Type in the empty field "{{baseURL}}/products/:productId";
+4. Complete in "Query Params" and "Path Variables" with relevant info like in the photo below:
 
-| Name            | Type    | In    | Required |
-| --------------- | ------- | ----- | -------- |
-| `productId`     | integer | path  | Yes      |
-| `product-label` | boolean | query | No       |
+| Name            | Type    | In    | Required | Description                                      |
+| --------------- | ------- | ----- | -------- | ------------------------------------------------ |
+| `productId`     | integer | path  | Yes      | Specifies the product's id you wish to retrieve. |
+| `product-label` | boolean | query | No       | Returns the product label in PDF format.         |
    
-7. Positive result: 200 OK
-8. Should be displayed the product with its data: Id, Category, Name, Manufacturer, Price, Current-Stock, InStock.
+5. Positive result: 200 OK
+6. Should be displayed the product with its data: Id, Category, Name, Manufacturer, Price, Current-Stock, InStock.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/DbJTLyj/4-Get-a-product.png">
 
 ## Cart
-### Create a new Cart
+### A. Create a new Cart
 
 1. Click on "Create a new cart" folder;
 2. Click on Create a new cart" request;
@@ -94,7 +93,7 @@
 4. Type in the empty field "{{baseURL}}/carts";
 5. Click on "Send";
 6. Positive result: 201 Created
-7. Should be displayed in "Body" a result like this example:
+7. Should be displayed in "Body" a result like this example below:
 
 ```
 {
@@ -104,4 +103,22 @@
 ```
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/wZqKDb8/5-Create-A-New-Cart.png">
+
+### B. Get a cart
+
+
+1. Click on "Get a cart" request;
+2. Select "GET" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId";
+4. Complete in "Path Variables" with relevant info like in the photo below:
+
+| Name     | Type   | In   | Required | Description                                        |
+| -------- | ------ | ---- | -------- | -------------------------------------------------- |
+| `cartId` | string | path | Yes      | Specifies the id of the cart you wish to retrieve. |
+
+4. Click on "Send";
+5. Positive result: 200 OK
+6. Should be displayed in "Body" a result like this example below:
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/NVRCSS0/6-Get-A-Cart.png">
 
