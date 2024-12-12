@@ -106,7 +106,6 @@
 
 ### B. Get a cart
 
-
 1. Click on "Get a cart" request;
 2. Select "GET" method;
 3. Type in the empty field "{{baseURL}}/carts/:cartId";
@@ -122,3 +121,49 @@
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/NVRCSS0/6-Get-A-Cart.png">
 
+### C. Get cart items
+
+1. Click on "Get cart items" request;
+2. Select "Get" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId/items";
+4. Complete in "Path Variables" with relevant info like in the photo below:
+
+ Name     | Type   | In   | Required | Description                                                            |
+| -------- | ------ | ---- | -------- | ---------------------------------------------------------------------- |
+| `cartId` | string | path | Yes      | Specifies the id of the cart for which you wish to retrieve the items. |
+
+4. Click on "Send";
+5. Positive result: 200 OK
+6. Should be displayed in "Body" a result like this example below:
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/0rSc39g/6-Get-Cart-Items.png">
+
+### D. Add an item to cart
+
+1. Click on "Add an item to cart" request;
+2. Select "POST" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId/items";
+4. Complete in "Path Variables" with relevant info like in the photo below:
+
+| Name        | Type    | In   | Required | Description                                         |
+| ----------- | ------- | ---- | -------- | --------------------------------------------------- |
+| `cartId`    | string  | path | Yes      | Specifies the cart id.                              |
+| `productId` | integer | body | Yes      | Specifies the product id                            |
+| `quantity`  | integer | body | No       | If no quantity is provided, the default value is 1. |
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/0rSc39g/6-Get-Cart-Items.png">
+
+5. Click On "Body"-> raw-> JSON;
+6. Complete with data required in tabel above; an example:
+
+```
+{
+   "productId": 4646
+   "quantity": 2
+}
+```
+7. Click on "Send";
+8. Positive result: 201 Created;
+9. Should be displayed the item created and the itemId like in the photo below.
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/gwQmjGb/7-Add-an-Item-To-Cart-2.png">
