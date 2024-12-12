@@ -18,14 +18,15 @@
   - [Modify an item in the cart](#Modify-an-item-in-the-cart)
   - [Replace an item in the cart](#Replace-an-item-in-the-cart)
   - [elete an item in the cart](#Delete-an-item-in-the-cart)
+- [API Authentication](#API-Authentication)
+  - [Register a new API client](#Register-a-new-API-client)
 - [Orders](#Orders)
   - [Get all orders](#Get-all-orders)
   - [Get a single order](#Get-a-single-order)
   - [Create a new order](#Create-a-new-order)
   - [Update an order](#Update-an-order)
   - [Delete an order](#Delete-an-order)
-- [API Authentication](#API-Authentication)
-  - [Register a new API client](#Register-a-new-API-client)
+
 
 
 
