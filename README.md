@@ -31,7 +31,7 @@
 1. Click on "Status" folder;
 2. Click on "Status" request;
 3. Select "GET" method;
-4. Type in the empty field "{{baseURL}}/status"
+4. Type in the empty field "{{baseURL}}/status";
 5. Click on "Send" to send the request;
 6. Positive result: 200 OK.
    
@@ -61,18 +61,18 @@
 | `available` | boolean | query | Yes      |
 
 2. Click on "Send" to send the request;
-3. Positive result: 200 OK
+3. Positive result: 200 OK;
 4. Should be displayed the just the "meat-seafood" products, the number and the availability of products selected.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/VJ5Xtq0/3-Get-all-products-2.png">
 
-## Products
-### Get a product
+
+## C. Get a product
 
 1. Click on "Get a product" folder;
 2. Click on "Get a product" request;
 3. Select "GET" method;
-4. Type in the empty field "{{baseURL}}/products/:productId"
+4. Type in the empty field "{{baseURL}}/products/:productId";
 5. Complete in "Query Params" and "Path Variables" with relevant info like in the photo below:
 
 | Name            | Type    | In    | Required |
@@ -84,3 +84,24 @@
 8. Should be displayed the product with its data: Id, Category, Name, Manufacturer, Price, Current-Stock, InStock.
    
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/DbJTLyj/4-Get-a-product.png">
+
+## Cart
+### Create a new Cart
+
+1. Click on "Create a new cart" folder;
+2. Click on Create a new cart" request;
+3. Select "POST" method;
+4. Type in the empty field "{{baseURL}}/carts";
+5. Click on "Send";
+6. Positive result: 201 Created
+7. Should be displayed in "Body" a result like this example:
+
+```
+{
+   "created": true,
+   "cartId": "bx0-ycNjqIm5IvufuuZ09"
+}
+```
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/wZqKDb8/5-Create-A-New-Cart.png">
+
