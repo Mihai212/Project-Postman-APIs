@@ -167,3 +167,25 @@
 9. Should be displayed the item created and the itemId like in the photo below.
 
 <img align="center" alt="Status" width="1300" src="https://i.ibb.co/gwQmjGb/7-Add-an-Item-To-Cart-2.png">
+
+### Modify an item
+
+1. Click on "Modify an item" request;
+2. Select "PATCH" method;
+3. Type in the empty field "{{baseURL}}/carts/:cartId/items/:itemId";
+4. Complete in "Path Variables" with relevant info like in the photo below:
+
+| Name       | Type    | In   | Required | Description            |
+| ---------- | ------- | ---- | -------- | ---------------------- |
+| `cartId`   | string  | path | Yes      | Specifies the cart id. |
+| `itemId`   | string  | path | Yes      | Specifies the item id. |
+| `quantity` | integer | body | Yes      | Quantity               |
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/qJpJJ7g/8-Modify-An-Item-In-The-Cart-1.png">
+
+4. Complete in "Body" with relevant info like in the photo below:
+4. Click on "Send";
+5. Positive result: 204 No Content
+6. Should be displayed in "Body" a result like this example below:
+
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/Chydj4Z/8-Modify-An-Item-In-The-Cart-2.png">
