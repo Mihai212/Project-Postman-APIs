@@ -1,605 +1,86 @@
-# Postman-APIs
+# <h1 align="center">Postman API Project</h1>
+<h3 align="center">Documentation here 👉: <a href="https://github.com/vdespa/Postman-Complete-Guide-API-Testing/blob/main/simple-grocery-store-api.md">API Documentation</a></h3>
 
-```json
-{
-	"info": {
-		"_postman_id": "d4b878f2-4e21-4628-ae71-3ca2573c06a2",
-		"name": "Endpoints",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31589930"
-	},
-	"item": [
-		{
-			"name": "Status",
-			"item": [
-				{
-					"name": "Status",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/status",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"status"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Products",
-			"item": [
-				{
-					"name": "Get all products",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"\r",
-									"pm.test(\"Response status code is 200\", function () {\r",
-									"    pm.expect(pm.response.code).to.equal(200);\r",
-									"});\r",
-									"\r",
-									"\r",
-									"pm.test(\"Response has the required fields - id, category, name, and inStock\", function () {\r",
-									"    const responseData = pm.response.json();\r",
-									"    \r",
-									"    pm.expect(responseData).to.be.an('array');\r",
-									"    responseData.forEach(function (product) {\r",
-									"        pm.expect(product).to.include.all.keys('id', 'category', 'name', 'inStock');\r",
-									"    });\r",
-									"});\r",
-									"\r",
-									"\r",
-									"pm.test(\"Category is a non-empty string\", function () {\r",
-									"  const responseData = pm.response.json();\r",
-									"  \r",
-									"  pm.expect(responseData).to.be.an('array');\r",
-									"  responseData.forEach(function(product) {\r",
-									"    pm.expect(product.category).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Category should not be empty\");\r",
-									"  });\r",
-									"});\r",
-									"\r",
-									"\r",
-									"pm.test(\"Name is a non-empty string\", function () {\r",
-									"  const responseData = pm.response.json();\r",
-									"  \r",
-									"  pm.expect(responseData).to.be.an('array');\r",
-									"  responseData.forEach(function(product) {\r",
-									"      pm.expect(product.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");\r",
-									"  });\r",
-									"});\r",
-									"\r",
-									"\r",
-									"pm.test(\"InStock is a boolean value\", function () {\r",
-									"  const responseData = pm.response.json();\r",
-									"  \r",
-									"  pm.expect(responseData).to.be.an('array');\r",
-									"  responseData.forEach(function(product) {\r",
-									"    pm.expect(product.inStock).to.be.a('boolean');\r",
-									"  });\r",
-									"});\r",
-									"\r",
-									"pm.environment.get(\"variable_key\");"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/products",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"products"
-							],
-							"query": [
-								{
-									"key": "category",
-									"value": "meat-seafood",
-									"disabled": true
-								},
-								{
-									"key": "results",
-									"value": "20",
-									"disabled": true
-								},
-								{
-									"key": "available",
-									"value": "true",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a product",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/products/:productId?productId=4646&product-label=true",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"products",
-								":productId"
-							],
-							"query": [
-								{
-									"key": "productId",
-									"value": "4646"
-								},
-								{
-									"key": "product-label",
-									"value": "true"
-								}
-							],
-							"variable": [
-								{
-									"key": "productId",
-									"value": "4646"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Cart",
-			"item": [
-				{
-					"name": "Create a new cart",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/carts",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a cart",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/carts/:cartId?cartId=zW_Avbf053WzQyj_XOfOy",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts",
-								":cartId"
-							],
-							"query": [
-								{
-									"key": "cartId",
-									"value": "zW_Avbf053WzQyj_XOfOy"
-								}
-							],
-							"variable": [
-								{
-									"key": "cartId",
-									"value": "zW_Avbf053WzQyj_XOfOy"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get cart items",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{baseURL}}/carts/:cartId/items?cartId=zW_Avbf053WzQyj_XOfOy",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts",
-								":cartId",
-								"items"
-							],
-							"query": [
-								{
-									"key": "cartId",
-									"value": "zW_Avbf053WzQyj_XOfOy"
-								}
-							],
-							"variable": [
-								{
-									"key": "cartId",
-									"value": "zW_Avbf053WzQyj_XOfOy"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add an item to cart",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\"productId\": 8739,\r\n\"quantity\": 2\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/carts/:cartId/items?cartId=2N4-Ps5b5NsReQY2hqPfk&productId=8739&quantity=2",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts",
-								":cartId",
-								"items"
-							],
-							"query": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								},
-								{
-									"key": "productId",
-									"value": "8739"
-								},
-								{
-									"key": "quantity",
-									"value": "2"
-								}
-							],
-							"variable": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Modify an item In the cart",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"quantity\": 3\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/carts/:cartId/items/:itemId?cartId=2N4-Ps5b5NsReQY2hqPfk&itemId=992715279",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts",
-								":cartId",
-								"items",
-								":itemId"
-							],
-							"query": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								},
-								{
-									"key": "itemId",
-									"value": "992715279"
-								}
-							],
-							"variable": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								},
-								{
-									"key": "itemId",
-									"value": "992715279"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete an item in the cart",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/carts/:cartId/items/:itemId?cartId=2N4-Ps5b5NsReQY2hqPfk&itemId=147368152",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"carts",
-								":cartId",
-								"items",
-								":itemId"
-							],
-							"query": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								},
-								{
-									"key": "itemId",
-									"value": "147368152"
-								}
-							],
-							"variable": [
-								{
-									"key": "cartId",
-									"value": "2N4-Ps5b5NsReQY2hqPfk"
-								},
-								{
-									"key": "itemId",
-									"value": "147368152"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "API authentification",
-			"item": [
-				{
-					"name": "Register a new API",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\"clientName\": \"Test\",\r\n\"clientEmail\": \"tester@test.com\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/api-clients?clientName&clientEmail",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"api-clients"
-							],
-							"query": [
-								{
-									"key": "clientName",
-									"value": null
-								},
-								{
-									"key": "clientEmail",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Orders",
-			"item": [
-				{
-					"name": "Create a new order",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "9d232d998ef50944aa5cb07908f58556500b536d85380fc06d454cb618a4de8c",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"cartId\": \"4uKfe4EIwbrnCnPo5sYvO\",\r\n    \"customerName\": \"Mihai\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/orders",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a single order",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Get all orders",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "9d232d998ef50944aa5cb07908f58556500b536d85380fc06d454cb618a4de8c",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{baseURL}}/orders",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update an order",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "9d232d998ef50944aa5cb07908f58556500b536d85380fc06d454cb618a4de8c",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"customerNName\":\"Michael\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}/orders/:orderId",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"orders",
-								":orderId"
-							],
-							"variable": [
-								{
-									"key": "orderId",
-									"value": "NIC1BVjsZrjcnlEDwyZYV"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete an order",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "9d232d998ef50944aa5cb07908f58556500b536d85380fc06d454cb618a4de8c",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{baseURL}}/orders/:orderId",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"orders",
-								":orderId"
-							],
-							"variable": [
-								{
-									"key": "orderId",
-									"value": "NIC1BVjsZrjcnlEDwyZYV"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "baseURL",
-			"value": "https://simple-grocery-store-api.glitch.me",
-			"type": "string"
-		}
-	]
-}
+<h3 align="center"> "This API allows you to place a grocery order which will be ready for pick-up in the store." </h1>
+
+## Endpoints
+- [Status](#Status)
+- [Products](#Products)
+  - [Get all products](#Get-all-products)
+  - [Get a product](#Get-a-product)
+- [Cart](#Cart)
+  - [Get a cart](#Get-a-cart)
+  - [Get cart items](#Get-cart-items)
+  - [Create a new cart](#Create-a-new-cart)
+  - [Add an item to cart](#Add-an-item-to-cart)
+  - [Modify an item in the cart](#Modify-an-item-in-the-cart)
+  - [Replace an item in the cart](#Replace-an-item-in-the-cart)
+  - [Delete an item in the cart](#Delete-an-item-in-the-cart)
+- [Orders](#Orders)
+  - [Get all orders](#Get-all-orders)
+  - [Get a single order](#Get-a-single-order)
+  - [Create a new order](#Create-a-new-order)
+  - [Update an order](#Update-an-order)
+  - [Delete an order](#Delete-an-order)
+- [API Authentication](#API-Authentication)
+  - [Register a new API client](#Register-a-new-API-client)
+#
+
+## Status
+
+1. Click on "Status" folder;
+2. Click on "Status" request;
+3. Select "GET" method;
+4. Type in the empty field "{{baseURL}}/status"
+5. Click on "Send" to send the request;
+6. Positive result: 200 OK.
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/K6n12K0/1-Status.png">
+
+## Products
+### A. Get all products
+
+1. Click on "Get all products" folder;
+2. Click on "Get all products" request;
+3. Select "GET" method;
+4. Type in the empty field "{{baseURL}}/products"
+6. Click on "Send" to send the request;
+7. Positive result: 200 OK
+8. Should be displayed the id, category, name and valability of all the products from the grocery store.
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/TM0fs0D/2-Get-all-products-1.png">
+
+### B. Get all products
+
+1. Complete in "Query Params" with relevant info like in the photo below:
+   
+| Name        | Type    | In    | Required |
+| ----------- | ------- | ----- | -------- |
+| `category`  | string  | query | Yes      |
+| `results`   | integer | query | Yes      |
+| `available` | boolean | query | Yes      |
+
+2. Click on "Send" to send the request;
+3. Positive result: 200 OK
+4. Should be displayed the just the "meat-seafood" products, the number and the availability of products selected.
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/VJ5Xtq0/3-Get-all-products-2.png">
+
+## Products
+### Get a product
+
+1. Click on "Get a product" folder;
+2. Click on "Get a product" request;
+3. Select "GET" method;
+4. Type in the empty field "{{baseURL}}/products"
+5. Complete in "Query Params" and "Path Variables" with relevant info like in the photo below:
+
+| Name            | Type    | In    | Required |
+| --------------- | ------- | ----- | -------- |
+| `productId`     | integer | path  | Yes      |
+| `product-label` | boolean | query | No       |
+   
+7. Positive result: 200 OK
+8. Should be displayed the product with its data: Id, Category, Name, Manufacturer, Price, Current-Stock, InStock.
+   
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/DbJTLyj/4-Get-a-product.png">
