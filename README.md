@@ -136,7 +136,7 @@
 5. Positive result: 200 OK
 6. Should be displayed in "Body" a result like this example below:
 
-<img align="center" alt="Status" width="1300" src="https://i.ibb.co/0rSc39g/6-Get-Cart-Items.png">
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/yq1XJkw/6-Get-Cart-Items.png">
 
 ### D. Add an item to cart
 
@@ -151,7 +151,7 @@
 | `productId` | integer | body | Yes      | Specifies the product id                            |
 | `quantity`  | integer | body | No       | If no quantity is provided, the default value is 1. |
 
-<img align="center" alt="Status" width="1300" src="https://i.ibb.co/0rSc39g/6-Get-Cart-Items.png">
+<img align="center" alt="Status" width="1300" src="https://i.ibb.co/spTL7S0/7-Add-an-Item-To-Cart-1.png">
 
 5. Click On "Body"-> raw-> JSON;
 6. Complete with data required in tabel above; an example:
